@@ -1,1 +1,1 @@
-# PukhtaWeb_lab
+# PukhtaWeb
