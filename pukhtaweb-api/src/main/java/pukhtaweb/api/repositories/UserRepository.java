@@ -1,4 +1,9 @@
 package pukhtaweb.api.repositories;
 
-public class UserRepository {
+import pukhtaweb.api.entities.User;
+
+public interface UserRepository {
+
+    User insert(User user) throws ClassNotFoundException, Exception;
+
 }
