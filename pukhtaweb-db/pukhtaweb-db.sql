@@ -13,4 +13,4 @@ CREATE TABLE "user"
 );
 
 INSERT INTO "user" ("email","password","first_name","surname","phone","is_active")
-VALUES('user@gmail.com','123456','First','Sur','+380000000000','true');asd
+VALUES('user@gmail.com','123456','First','Sur','+380000000000','true');
