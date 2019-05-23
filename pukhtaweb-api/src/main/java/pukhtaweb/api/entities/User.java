@@ -1,7 +1,7 @@
 package pukhtaweb.api.entities;
 
 public class User {
-    private Long id;
+    private Integer id;
     private String email;
     private String phone;
     private String password;
@@ -9,7 +9,22 @@ public class User {
     private String surname;
     private Boolean isActive;
 
-    public Long getId() {
+
+    public User() {
+    }
+
+    public User(Integer id, String email, String password, String firstName, String surname, String phone, Boolean isActive) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.surname = surname;
+        this.phone = phone;
+        this.isActive = isActive;
+    }
+
+
+    public Integer getId() {
         return id;
     }
 
@@ -21,7 +36,7 @@ public class User {
         this.phone = phone;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -63,5 +78,18 @@ public class User {
 
     public void setActive(Boolean active) {
         isActive = active;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", phone='" + phone + '\'' +
+                ", isActive=" + isActive +
+                '}';
     }
 }

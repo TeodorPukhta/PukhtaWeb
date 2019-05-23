@@ -32,9 +32,7 @@ public class UserRegRequest {
         this.password = password;
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
+    public String getFirstName() { return firstname; }
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
@@ -47,5 +45,6 @@ public class UserRegRequest {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
 
 }
