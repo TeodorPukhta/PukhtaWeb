@@ -54,8 +54,7 @@ class Registration extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div>
+        <div className="inputform">
         <form onSubmit={this.onSubmit}>
               <div className="FormField">
                   <label className="FormField__Label" htmlFor="firstname">First Name</label>
@@ -77,13 +76,12 @@ class Registration extends Component {
                   <label className="FormField__Label" htmlFor="phone">Phone</label>
                   <input type="text" id="phone" className="FormField__Input" placeholder="Enter your phone number" name="phone" value={this.state.phone} onChange={this.handleChange} />
               </div>
+              <br></br>
               <div className="FormField">
-                  <button className="FormField__Button mr-20">Sign Up</button>
+                  <button className="Buttons">Sign Up</button>
               </div>
           </form>
         </div>  
-
-      </div>
     );
   }
 }

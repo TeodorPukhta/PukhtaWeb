@@ -21,6 +21,7 @@ class BooksItem extends Component {
 
         const item = this.props.item;
         return (
+            
             <tr key={ item.id }>
                 <td>{ item.id }</td>
                 <td>{ item.user }</td>
@@ -28,6 +29,7 @@ class BooksItem extends Component {
                 <td>{ item.accept}</td>
                 <td><Link to={"/details/" +item.id}>Details</Link></td>
             </tr>
+         
         );
     }
 }

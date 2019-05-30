@@ -27,10 +27,9 @@ class App extends Component {
     
     return (
       <Router>
-      <div className="App">
-        <h1>PukhtaWeb</h1>  
-        <div>
-          <NavLink exact to ="/">Start Page </NavLink>
+       <div className="logo"> <h1>PukhtaWeb</h1></div>
+        <div className= "NavigationMenu">
+          <NavLink exact to ="/">Main Page </NavLink>
           <NavLink to ="/account">Sign up </NavLink>  
           <NavLink exact to ="/newbook">Add Book</NavLink>
         </div>
@@ -41,7 +40,6 @@ class App extends Component {
           <Route path='/details/:Id' component={Details} />
           <Route component={PageNotfound} /> 
         </Switch>
-      </div>
       </Router>
     );
   }

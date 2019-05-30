@@ -39,7 +39,8 @@ class CommentsList extends Component {
     render() {
         console.log("[CommentsList] render");        
         return (
-            <table>
+            <div className="bookslist">
+            <table align="center">
                 <thead>
                     <tr>
                         <th>User</th>
@@ -56,6 +57,7 @@ class CommentsList extends Component {
                 }
                 </tbody>
             </table>
+            </div>
         );
     }
 }

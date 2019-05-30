@@ -40,6 +40,7 @@ class BooksList extends Component {
          
 
         return (
+            <div align="center" className="bookslist">
             <table>
                 <thead>
                     <tr>
@@ -57,6 +58,7 @@ class BooksList extends Component {
                 }
                 </tbody>
             </table>
+            </div>
         );
     }
 }

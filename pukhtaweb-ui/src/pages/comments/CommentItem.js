@@ -30,16 +30,20 @@ class CommentItem extends Component {
         });
       } 
     render() {
+        
         console.log("[CommentItem] render");        
         const item = this.props.item;
         return (
+            
             <tr key={ item.id }>
                 <td>{ item.user }</td>
                 <td>{ item.comment}</td>
                 <td>{ item.accept}</td>
-                <td><button onClick={(e) => this.onAccept(item.id, e)}>Accept</button></td>
+                <td><button className="Buttons" onClick={(e) => this.onAccept(item.id, e)}>Accept</button></td>
             </tr>
+            
         );
+        
     }
 }
 export default CommentItem;

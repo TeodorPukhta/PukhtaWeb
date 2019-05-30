@@ -46,15 +46,16 @@ class AddComment extends Component{
     render(){
     console.log("[AddComment] render"); 
     return(
-    <div >
+    <div className="inputform">
     <form onSubmit={this.onSubmit}>
                 
-                <div >
-                    <label htmlFor="Comment"></label>
-                    <input type="text" id="comment"  placeholder="Enter comment" name="comment" value={this.state.comment} onChange={this.handleChange}/>
-                </div> 
                 
-                  <button>Add</button>
+                    <label htmlFor="Comment"></label>
+                    <br></br>
+                    <input type="text" id="comment"  placeholder="Enter comment" name="comment" value={this.state.comment} onChange={this.handleChange}/>
+                
+                
+                  <button className="Buttons">Add</button>
                 
     </form>
     </div>

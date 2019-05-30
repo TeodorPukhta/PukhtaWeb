@@ -1,13 +1,12 @@
-.App {
+body {
+  background: #dad1c9;
+}
+.logo{
+	font-size: 48px;
+  color: rgb(223, 15, 15);
   text-align: center;
+	
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -23,11 +22,82 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.FormField{
+  font-style: oblique;
+  color: #a0141b;
+  font-size: large;
+  font-weight: bold;
+}
+.bookslist{
+  font-style: oblique;
+  line-height: 30px;
+  word-spacing: 2px;
+  font-weight: bold;
+  color: #110202;
+}
+.NavigationMenu{
+  font-style: oblique;
+  line-height: 30px;
+  word-spacing: 2px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.NavigationMenu:hover {text-decoration: underline;}
+
+.inputform{
+  text-align: center;
+}
+
+
+.DetailBook{
+  color: #a0141b;
+  font-style: oblique;
+  line-height: 30px;
+  word-spacing: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+.Buttons{
+  background: #000000;
+  color: #ffffff;
+  font-size: large;
+}
+
+.Buttons:hover{
+  background: #ffffff;
+  color: #000000;
+}
+
+ label,
+ input[type=text] {
+  display: inline-block;
+}
+label {
+    width: 7%;
+}
+input[type=text] {
+  width: 200px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
+}
+input[type=password] {
+  width: 200px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
+}
+input[type=email] {
+  width: 200px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
 }

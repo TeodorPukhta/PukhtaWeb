@@ -50,9 +50,9 @@ class AddBook extends Component{
 render(){
   console.log("[AddBook] render"); 
     return(
-<div>
+<div className="inputform">
 <form onSubmit={this.onSubmit}>
-  <div>
+  <div className="Input_div">
   <label  htmlFor="name">Name</label>
   <input type="text" id="name" placeholder="Enter name" name="name" value={this.state.name} onChange={this.handleChange}/>  
   </div> 
@@ -80,7 +80,7 @@ render(){
   <h1>Confirm</h1>
                 
                 <div>
-                  <button>Add</button>
+                  <button className="Buttons">Add</button>
                   <hr></hr>
                 </div>
 </form>
