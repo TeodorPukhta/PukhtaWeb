@@ -23,23 +23,37 @@ CREATE TABLE "book"
     CONSTRAINT pk_book_id PRIMARY KEY ("id")
 );
 
-CREATE TABLE "BooksList"
+CREATE TABLE "bookslist"
 (
 	"id" SERIAL NOT NULL,
 	"user_id" INTEGER NOT NULL,
 	"book_id" INTEGER NOT NULL,
-    CONSTRAINT pk_BooksList_id PRIMARY KEY ("id"),
+	"accept"  BOOLEAN NOT NULL,
+    CONSTRAINT pk_bookslist_id PRIMARY KEY ("id"),
 	CONSTRAINT fk_user_id FOREIGN KEY("user_id") 
 	REFERENCES "user"("id"),
 	CONSTRAINT fk_book_id FOREIGN KEY("book_id") 
 	REFERENCES "book"("id")
 );
 
-INSERT INTO "user" ("email","password","first_name","surname","phone","is_active")
-VALUES('user@gmail.com','123456','First','Sur','+380000000000','true');
+CREATE TABLE "comment"
+(
+	"id" SERIAL NOT NULL,
+	"user_id" INTEGER NOT NULL,
+	"book_id" INTEGER NOT NULL,
+	"comment" VARCHAR(500) default 'not provided',
+	"accept"  BOOLEAN NOT NULL,
+    CONSTRAINT pk_comment_id PRIMARY KEY ("id"),
+	CONSTRAINT fk_user_id FOREIGN KEY("user_id") 
+	REFERENCES "user"("id"),
+	CONSTRAINT fk_book_id FOREIGN KEY("book_id") 
+	REFERENCES "book"("id")
+);
 
-INSERT INTO "book" ("name","genre","description","author","year")
-VALUES('Test Book','ujas','test','Pukhta','2000');
+"bookslist"
+'15','7'
 
-INSERT INTO "BooksList" ("user_id","book_id")
-VALUES('15','7');
+
+
+
+

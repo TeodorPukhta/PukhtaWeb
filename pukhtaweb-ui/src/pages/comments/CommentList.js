@@ -1,59 +1,58 @@
 import React, { Component } from 'react';
-import BooksItem from './BooksItem';
+import CommentItem from './CommentItem';
 
-class BooksList extends Component {
-      
+
+class CommentsList extends Component {
+    
     constructor() {
         super();
-        console.log("[BooksList] constructor");
+        console.log("[CommentsList] constructor");
         this.state = {
             items:[]
         };
     }
 
-    componentDidMount() {
-        console.log("[BooksList] componentDidMount");
+
+    componentWillUnmount() {
+        console.log("[CommentsList] componentWillUnmount");
+    } 
+    
+    componentDidMount(){
+        const idBook = this.props.match.params.idBook;
+        console.log("[CommentsList] componentDidMount");
+        console.log(idBook);
         let initialItems = [];
-        fetch('http://localhost:8080/api/list')
+        fetch(`http://localhost:8080/api/comments/${idBook}/comment`)
             .then(response => {
                 return response.json();
                 
             }).then(data => {
+                console.log(data)
                 initialItems = data.map((planet) => {
-                console.log(planet)
-                return planet
-            });
+                return planet});
 
             this.setState({
                 items: initialItems,
             });
         });
     }
-    
-    componentWillUnmount() {
-        console.log("[BooksList] componentWillUnmount");
-    }
-
     render() {
-        console.log("[BooksList] render");
-
-         
-
+        console.log("[CommentsList] render");        
         return (
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>User</th>
-                        <th>Book</th>
+                        <th>Comment</th>
                         <th>Accept</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                 {
-                    this.state.items.map(item => <BooksItem item={ item } />)
                     
+                    this.state.items.map(item => <CommentItem item={ item } />)
+                   
                 }
                 </tbody>
             </table>
@@ -61,4 +60,4 @@ class BooksList extends Component {
     }
 }
 
-export default BooksList;
+export default CommentsList; 

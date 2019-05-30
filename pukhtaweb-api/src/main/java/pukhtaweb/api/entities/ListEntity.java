@@ -4,7 +4,7 @@ public class ListEntity {
     private Integer id;
     private Integer userId;
     private Integer bookId;
-
+    private String accept;
     public ListEntity() {
     }
 
@@ -38,6 +38,13 @@ public class ListEntity {
         this.bookId = bookId;
     }
 
+    public void setAccept(String accept) {
+        this.accept = accept;
+    }
+
+    public String getAccept() {
+        return accept;
+    }
 
     @Override
     public String toString() {
@@ -47,4 +54,6 @@ public class ListEntity {
                 ", bookId=" + bookId +
                 '}';
     }
+
+
 }

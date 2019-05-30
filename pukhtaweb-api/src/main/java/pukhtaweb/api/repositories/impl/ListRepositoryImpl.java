@@ -14,8 +14,7 @@ package pukhtaweb.api.repositories.impl;
 public class ListRepositoryImpl implements ListRepository {
     private static final String SELECT_ALL = "SELECT * FROM public.bookslist";
 
-    private static final String SELECT_ALL2 = "SELECT a.id, u.surname, b.name FROM public.bookslist a JOIN public.\"user\" u ON  a.user_id=u.id JOIN  public.\"book\" b ON a.book_id = b.id";
-
+    private static final String SELECT_ALL2 = "SELECT a.id, u.surname, b.name, a.accept FROM public.bookslist a JOIN public.\"user\" u ON  a.user_id=u.id JOIN  public.\"book\" b ON a.book_id = b.id";
     private static final String CREATE =
             "INSERT INTO \"bookslist\" (\"user_id\",\"book_id\")\n" + "VALUES(?,?) RETURNING id;";
     public static void main(String[] args) throws SQLException {
@@ -97,7 +96,14 @@ public class ListRepositoryImpl implements ListRepository {
         Integer id = resultSet.getInt("id");
         String user = resultSet.getString("surname");
         String book = resultSet.getString("name");
-        return new ListDataResponse(id,user,book);
+        String accept;
+        if( resultSet.getBoolean("accept")){
+            accept = "+";
+        }else{
+            accept ="-";
+        }
+
+        return new ListDataResponse(id,user,book,accept );
     }
     private void setPreparedStatementData(PreparedStatement statement, ListEntity entity) throws SQLException {
         statement.setInt(1, entity.getUserId());

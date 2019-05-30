@@ -5,6 +5,7 @@ import BooksList from './pages/list/BooksList';
 import Registration from './pages/account/Registration';
 import PageNotfound from './pages/common/PageNotFound';
 import AddBook from './pages/AddBook';
+import Details from './pages/Details';
 
 class App extends Component {
 
@@ -29,18 +30,16 @@ class App extends Component {
       <div className="App">
         <h1>PukhtaWeb</h1>  
         <div>
-          {/* <Link to="/account">Register</Link> */}
           <NavLink exact to ="/">Start Page </NavLink>
           <NavLink to ="/account">Sign up </NavLink>  
-          {/* <NavLink exact to ="/addbook">Add Book</NavLink>   */}
           <NavLink exact to ="/newbook">Add Book</NavLink>
         </div>
         <Switch>
           <Route exact path="/" component={BooksList} />  
           <Route path="/account" component={Registration} />
-          {/* <Route component={PageNotfound} />  */}
-          {/* <Route path="/addbook" component={AddBook} />  */}
           <Route path="/newbook" component={AddBook}/>    
+          <Route path='/details/:Id' component={Details} />
+          <Route component={PageNotfound} /> 
         </Switch>
       </div>
       </Router>

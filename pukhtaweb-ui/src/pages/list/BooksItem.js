@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class BooksItem extends Component {
 
@@ -24,6 +25,8 @@ class BooksItem extends Component {
                 <td>{ item.id }</td>
                 <td>{ item.user }</td>
                 <td>{ item.book }</td>
+                <td>{ item.accept}</td>
+                <td><Link to={"/details/" +item.id}>Details</Link></td>
             </tr>
         );
     }
