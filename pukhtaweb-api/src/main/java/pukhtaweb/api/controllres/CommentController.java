@@ -65,7 +65,7 @@ public class CommentController {
 
         CommentEntity not=new CommentEntity();
         not.setId(666);
-        not.setUser("No comments");
+        not.setUser("----");
         not.setAccept("----");
         not.setComment("----");
         return not;

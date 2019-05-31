@@ -4,7 +4,8 @@ public class ListEntity {
     private Integer id;
     private Integer userId;
     private Integer bookId;
-    private String accept;
+    private Boolean accept;
+
     public ListEntity() {
     }
 
@@ -38,11 +39,11 @@ public class ListEntity {
         this.bookId = bookId;
     }
 
-    public void setAccept(String accept) {
+    public void setAccept(Boolean accept) {
         this.accept = accept;
     }
 
-    public String getAccept() {
+    public Boolean getAccept() {
         return accept;
     }
 

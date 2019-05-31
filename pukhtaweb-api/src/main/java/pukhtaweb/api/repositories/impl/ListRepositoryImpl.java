@@ -13,10 +13,8 @@ package pukhtaweb.api.repositories.impl;
 @Repository
 public class ListRepositoryImpl implements ListRepository {
     private static final String SELECT_ALL = "SELECT * FROM public.bookslist";
-
     private static final String SELECT_ALL2 = "SELECT a.id, u.surname, b.name, a.accept FROM public.bookslist a JOIN public.\"user\" u ON  a.user_id=u.id JOIN  public.\"book\" b ON a.book_id = b.id";
-    private static final String CREATE =
-            "INSERT INTO \"bookslist\" (\"user_id\",\"book_id\")\n" + "VALUES(?,?) RETURNING id;";
+    private static final String CREATE = "INSERT INTO \"bookslist\" (\"user_id\",\"book_id\",\"accept\")\n" + "VALUES(?,?,?) RETURNING id;";
     public static void main(String[] args) throws SQLException {
         new ListRepositoryImpl().insert(new ListEntity(0, 1, 1));
         new ListRepositoryImpl().selectAll().forEach(System.out::println);
@@ -103,10 +101,11 @@ public class ListRepositoryImpl implements ListRepository {
             accept ="-";
         }
 
-        return new ListDataResponse(id,user,book,accept );
+        return new ListDataResponse(id,user,book,accept);
     }
     private void setPreparedStatementData(PreparedStatement statement, ListEntity entity) throws SQLException {
         statement.setInt(1, entity.getUserId());
         statement.setInt(2, entity.getBookId());
+        statement.setBoolean(3,entity.getAccept());
     }
 }

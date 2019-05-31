@@ -52,28 +52,3 @@ public class UserController {
 
 
 }
-
-//private final UserRepository userRepository;
-//
-//    public UserController() {
-//        this.userRepository = new UserRepositoryImpl();
-//    }
-//
-//    @PostMapping("/api/user/register")
-//    public UserRegResponse register(@RequestBody UserRegRequest regRequest) throws Exception {
-//
-//        User newUser = new User();
-//        newUser.setEmail(regRequest.getEmail());
-//        newUser.setPhone(regRequest.getPhone());
-//        newUser.setPassword(regRequest.getPassword());
-//        newUser.setFirstName(regRequest.getFirstname());
-//        newUser.setSurname(regRequest.getSurname());
-//        newUser.setActive(true);
-//
-//        User insertedUser = this.userRepository.insert(newUser);
-//
-//        UserRegResponse regResponse = new UserRegResponse();
-//        regResponse.setUserId(insertedUser.getId());
-//
-//        return regResponse;
-//     }

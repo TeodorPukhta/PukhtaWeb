@@ -36,7 +36,6 @@ public class BookController {
         BookEntity insertedBook=this.bookRepository.insert(newBook);
         BookRegResponse regResponse= new BookRegResponse();
         regResponse.setBookId(insertedBook.getId());
-       // ListController a =new ListController();
         add_to_list(insertedBook);
 
 
@@ -46,7 +45,7 @@ public class BookController {
         ListEntity new_book= new ListEntity();
         new_book.setUserId(4);
         new_book.setBookId(entity.getId());
-        new_book.setAccept("-");
+        new_book.setAccept(false);
         ListEntity inserted_element=this.listRepository.insert(new_book);
         return new_book;
     }
